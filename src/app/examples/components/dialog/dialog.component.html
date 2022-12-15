@@ -1,1 +1,28 @@
 <button mat-raised-button color="primary" (click)="openDialog()">Open dialog</button>
+
+<br><br>
+
+<mat-divider></mat-divider>
+
+<br>
+
+<ul>
+  <li>
+    <mat-form-field appearance="fill">
+      <mat-label>What's your name?</mat-label>
+      <input matInput [(ngModel)]="name">
+    </mat-form-field>
+  </li>
+  <li>
+    <button mat-raised-button color="primary" (click)="openDialog2()">Open dialog</button>
+  </li>
+  <li *ngIf="animal">
+    You chose: <i>{{animal}}</i>
+  </li>
+</ul>
+
+<br><br>
+
+<mat-divider></mat-divider>
+
+<br>

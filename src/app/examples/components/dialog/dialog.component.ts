@@ -1,5 +1,10 @@
-import { Component } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { Component, Inject } from '@angular/core';
+import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+
+export interface DialogData {
+  animal: string;
+  name: string;
+}
 
 @Component({
   selector: 'app-dialog',
@@ -7,6 +12,9 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./dialog.component.scss']
 })
 export class DialogComponent {
+  animal: string;
+  name: string;
+
   constructor(public dialog: MatDialog) {}
 
   openDialog() {
@@ -16,10 +24,38 @@ export class DialogComponent {
       console.log(`Dialog result: ${result}`);
     });
   }
+
+  openDialog2(): void {
+    const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+      data: {name: this.name, animal: this.animal},
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.animal = result;
+    });
+  }
 }
+
 
 @Component({
   selector: 'dialog-content-example-dialog',
   templateUrl: 'dialog-1.html',
 })
 export class DialogContentExampleDialog {}
+
+
+@Component({
+  selector: 'dialog-overview-example-dialog',
+  templateUrl: 'dialog-3.html',
+})
+export class DialogOverviewExampleDialog {
+  constructor(
+    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData,
+  ) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+}
