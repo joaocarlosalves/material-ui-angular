@@ -1,18 +1,46 @@
 * {
-    margin: 0;
-    padding: 0;
-    outline: none;
-    box-sizing: border-box;
-    font: inherit;
-    -webkit-text-size-adjust: 100%
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font: inherit;
+  -webkit-text-size-adjust: 100%;
 }
-::-webkit-scrollbar { width: 18px; height: 18px }
-::-webkit-scrollbar-thumb { background: #ffd740 }
-::-webkit-scrollbar-track, ::-webkit-scrollbar-corner { background: #673ab7 }
-ul { list-style: none }
-html, body { height: 100%; }
-html, body, p, header, section, article, h1, h2, h3, h4, h5, h6 { width: 100% }
-p { margin-bottom: 15px }
+::-webkit-scrollbar {
+  width: 18px;
+  height: 18px;
+}
+::-webkit-scrollbar-thumb {
+  background: #ffd740;
+}
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+  background: #673ab7;
+}
+ul {
+  list-style: none;
+}
+html,
+body {
+  height: 100%;
+}
+html,
+body,
+p,
+header,
+section,
+article,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  width: 100%;
+}
+p {
+  margin-bottom: 15px;
+}
 a {
   text-decoration: none;
   color: inherit;
@@ -20,33 +48,40 @@ a {
   perspective: 1000;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  -webkit-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  transition: all .2s ease-in-out
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  transition: all 0.2s ease-in-out;
 }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 main {
-    display: flex;
-    .main-content, aside { padding: 20px }
-    .main-content { margin-left: 250px; padding: 20px }
-    aside {
-        width: 250px;
-        height: 100vh;
-        position: fixed;
-        background-color: #673ab7;
+  display: flex;
+  .main-content,
+  aside {
+    padding: 20px;
+  }
+  .main-content {
+    margin-left: 250px;
+    padding: 20px;
+  }
+  aside {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    background-color: #673ab7;
 
-        nav {
-            width: 84%;
-            height: 100%;
-            position: absolute;
-            overflow: auto;
-        }
-
-        ul li a {
-            color: #ffd740;
-            font-size: 18px;
-        }
+    nav {
+      width: 84%;
+      height: 100%;
+      position: absolute;
+      overflow: auto;
     }
+
+    ul li a {
+      color: #ffd740;
+      font-size: 18px;
+    }
+  }
 }
-
-
