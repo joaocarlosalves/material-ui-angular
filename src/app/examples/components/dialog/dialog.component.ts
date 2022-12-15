@@ -35,6 +35,8 @@ export class DialogComponent {
       this.animal = result;
     });
   }
+
+  openDialog3() { this.dialog.open(DialogContentExampleDialog2) }
 }
 
 
@@ -43,6 +45,13 @@ export class DialogComponent {
   templateUrl: 'dialog-1.html',
 })
 export class DialogContentExampleDialog {}
+
+
+@Component({
+  selector: 'dialog-content-example-dialog-2',
+  templateUrl: 'dialog-2.html',
+})
+export class DialogContentExampleDialog2 {}
 
 
 @Component({
