@@ -1,7 +1,7 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -118,6 +118,7 @@ import { FormComponent } from '../form/form.component';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    DragDropModule,
     MatNativeDateModule,
     MatSnackBarModule,
     MatInputModule,
@@ -155,7 +156,6 @@ import { FormComponent } from '../form/form.component';
     MatToolbarModule,
     MatTreeModule
   ],
-  exports: [
-  ]
+  exports: []
 })
 export class ComponentsModule { }

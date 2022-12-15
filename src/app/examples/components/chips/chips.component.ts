@@ -1,6 +1,6 @@
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormBuilder, FormControl } from '@angular/forms';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { MatChipEditedEvent, MatChipInputEvent } from '@angular/material/chips';
 import { Observable } from 'rxjs';
@@ -34,6 +34,7 @@ export class ChipsComponent {
   fruits2: Fruit[] = [{name: 'Lemon'}, {name: 'Lime'}, {name: 'Apple'}];
   keywords = ['angular', 'how-to', 'tutorial', 'accessibility'];
   formControl = new FormControl(['angular']);
+  stateForm = this._formBuilder.group({ stateGroup: '' });
   vegetables: Vegetable[] = [
     {name: 'apple'},
     {name: 'banana'},
@@ -42,7 +43,6 @@ export class ChipsComponent {
     {name: 'kiwi'},
     {name: 'cherry'},
   ];
-
   availableColors: ChipColor[] = [
     {name: 'none', color: undefined},
     {name: 'Primary', color: 'primary'},
@@ -52,7 +52,7 @@ export class ChipsComponent {
 
   @ViewChild('fruitInput') fruitInput: ElementRef<HTMLInputElement>;
 
-  constructor() {
+  constructor(private _formBuilder: FormBuilder) {
     this.filteredFruits = this.fruitCtrl.valueChanges.pipe(
       startWith(null),
       map((fruit: string | null) => (fruit ? this._filter(fruit) : this.allFruits.slice())),
@@ -61,9 +61,7 @@ export class ChipsComponent {
 
   removeKeyword(keyword: string) {
     const index = this.keywords.indexOf(keyword);
-    if (index >= 0) {
-      this.keywords.splice(index, 1);
-    }
+    if (index >= 0) this.keywords.splice(index, 1);
   }
 
   drop(event: CdkDragDrop<Vegetable[]>) {
@@ -72,66 +70,42 @@ export class ChipsComponent {
 
   add(event: MatChipInputEvent): void {
     const value = (event.value || '').trim();
-
-    // Add our fruit
-    if (value) {
-      this.fruits.push(value);
-    }
-
-    // Clear the input value
+    if (value) this.fruits.push(value);
     event.chipInput!.clear();
-
     this.fruitCtrl.setValue(null);
   }
 
   add2(event: MatChipInputEvent): void {
     const value = (event.value || '').trim();
-
-    // Add our keyword
-    if (value) {
-      this.keywords.push(value);
-    }
-
-    // Clear the input value
+    if (value) this.keywords.push(value);
     event.chipInput!.clear();
   }
 
   add3(event: MatChipInputEvent): void {
     const value = (event.value || '').trim();
-
-    // Add our fruit
-    if (value) {
-      this.fruits2.push({name: value});
-    }
-
-    // Clear the input value
+    if (value) this.fruits2.push({name: value});
     event.chipInput!.clear();
   }
 
   remove(fruit: Fruit): void {
     const index = this.fruits2.indexOf(fruit);
+    if (index >= 0) this.fruits2.splice(index, 1);
+  }
 
-    if (index >= 0) {
-      this.fruits2.splice(index, 1);
-    }
+  remove2(fruit: string): void {
+    const index = this.fruits.indexOf(fruit);
+    if (index >= 0) this.fruits.splice(index, 1);
   }
 
   edit(fruit: Fruit, event: MatChipEditedEvent) {
     const value = event.value.trim();
-
-    // Remove fruit if it no longer has a name
     if (!value) {
       this.remove(fruit);
       return;
     }
-
-    // Edit existing fruit
     const index = this.fruits2.indexOf(fruit);
-    if (index > 0) {
-      this.fruits2[index].name = value;
-    }
+    if (index > 0) this.fruits2[index].name = value;
   }
-
 
   selected(event: MatAutocompleteSelectedEvent): void {
     this.fruits.push(event.option.viewValue);
@@ -141,7 +115,6 @@ export class ChipsComponent {
 
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
-
     return this.allFruits.filter(fruit => fruit.toLowerCase().includes(filterValue));
   }
 }

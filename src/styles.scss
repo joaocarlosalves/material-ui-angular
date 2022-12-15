@@ -11,11 +11,11 @@
   height: 18px;
 }
 ::-webkit-scrollbar-thumb {
-  background: #ffd740;
+  background: #673ab7;
 }
 ::-webkit-scrollbar-track,
 ::-webkit-scrollbar-corner {
-  background: #673ab7;
+  background: #ffd740;
 }
 ul {
   list-style: none;
@@ -70,7 +70,7 @@ main {
     width: 250px;
     height: 100vh;
     position: fixed;
-    background-color: #673ab7;
+    background-color: #ffd740;
 
     nav {
       width: 84%;
@@ -79,9 +79,23 @@ main {
       overflow: auto;
     }
 
-    ul li a {
-      color: #ffd740;
-      font-size: 18px;
+    ul li {
+      padding: 3px 0;
+      border-bottom: 1px solid transparent;
+
+      a {
+        color: #673ab7;
+        font-size: 18px;
+        font-weight: 300;
+        text-transform: capitalize;
+        font-style: italic;
+        transition: all .2s ease-in-out;
+        &:hover {
+          text-indent: 5px;
+          border-bottom: 1px solid #673ab7;
+          padding-left: 3px
+        }
+      }
     }
   }
 }

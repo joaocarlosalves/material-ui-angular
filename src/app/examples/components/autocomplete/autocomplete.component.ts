@@ -1,17 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormBuilder} from '@angular/forms';
-
+import { Component } from '@angular/core';
+import { FormControl, FormBuilder } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
+
 export interface StateGroup {
   letter: string;
   names: string[];
 }
+
 export const _filter = (opt: string[], value: string): string[] => {
   const filterValue = value.toLowerCase();
-
   return opt.filter(item => item.toLowerCase().includes(filterValue));
 };
+
 @Component({
   selector: 'autocomplete',
   templateUrl: './autocomplete.component.html',
@@ -19,16 +20,13 @@ export const _filter = (opt: string[], value: string): string[] => {
 })
 export class AutocompleteComponent {
   myControl = new FormControl('');
-  options: string[] = ['One', 'Two', 'Three'];
-  filteredOptions: Observable<string[]>;
   control = new FormControl('');
+  options: string[] = ['One', 'Two', 'Three'];
   streets: string[] = ['Champs-Élysées', 'Lombard Street', 'Abbey Road', 'Fifth Avenue'];
   filteredStreets: Observable<string[]>;
-
-  stateForm = this._formBuilder.group({
-    stateGroup: '',
-  });
-
+  filteredOptions: Observable<string[]>;
+  stateForm = this._formBuilder.group({ stateGroup: '' });
+  stateGroupOptions: Observable<StateGroup[]>;
   stateGroups: StateGroup[] = [
     {
       letter: 'A',
@@ -126,24 +124,22 @@ export class AutocompleteComponent {
     },
   ];
 
-  stateGroupOptions: Observable<StateGroup[]>;
-
   constructor(private _formBuilder: FormBuilder) {}
 
   ngOnInit() {
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
-      map(value => this._filter(value || '')),
+      map(value => this._filter(value || ''))
     );
 
     this.stateGroupOptions = this.stateForm.get('stateGroup')!.valueChanges.pipe(
       startWith(''),
-      map(value => this._filterGroup(value || '')),
+      map(value => this._filterGroup(value || ''))
     );
 
     this.filteredStreets = this.control.valueChanges.pipe(
       startWith(''),
-      map(value => this._filter2(value || '')),
+      map(value => this._filter2(value || ''))
     );
   }
 
@@ -159,7 +155,6 @@ export class AutocompleteComponent {
 
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
-
     return this.options.filter(option => option.toLowerCase().includes(filterValue));
   }
 
