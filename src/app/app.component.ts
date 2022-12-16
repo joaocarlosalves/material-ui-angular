@@ -2,8 +2,21 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `
+    <main>
+      <aside>
+        <nav>
+            <menu>
+                <ul>
+                    <li *ngFor="let m of menu"><a [routerLink]="m.path">{{ m.path }}</a></li>
+                </ul>
+            </menu>
+          </nav>
+      </aside>
+
+      <section class='main-content'><router-outlet></router-outlet></section>
+    </main>
+  `
 })
 export class AppComponent {
   title = 'material-ui';

@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./ripple.component.scss']
 })
 export class RippleComponent {
-  constructor(){}
+  centered = false;
+  disabled = false;
+  unbounded = false;
+
+  radius: number;
+  color: string;
 }
