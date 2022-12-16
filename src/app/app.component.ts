@@ -8,7 +8,14 @@ import { Component } from '@angular/core';
         <nav>
             <menu>
                 <ul>
-                    <li *ngFor="let m of menu"><a [routerLink]="m.path">{{ m.path }}</a></li>
+                    <li><a routerLink=""
+                      (click)='changeMenu("home")'
+                      [class.active]='"home" === activeMenu || "" === activeMenu'>Home</a>
+                    </li>
+                    <li *ngFor="let m of menu">
+                      <a [routerLink]="m.path" (click)='changeMenu(m.path)'
+                        [class.active]='m.path === activeMenu'>{{ m.title }}</a>
+                    </li>
                 </ul>
             </menu>
           </nav>
@@ -20,42 +27,49 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'material-ui';
+  activeMenu: any;
   menu = [
-    { path: 'autocomplete', accordion: false },
-    { path: 'badge', accordion: false },
-    { path: 'bottom-sheet', accordion: false },
-    { path: 'buttons', accordion: false },
-    { path: 'button-toggle', accordion: false },
-    { path: 'card', accordion: false },
-    { path: 'cdk', accordion: false },
-    { path: 'checkbox', accordion: false },
-    { path: 'chips', accordion: false },
-    { path: 'datepicker', accordion: false },
-    { path: 'dialog', accordion: false },
-    { path: 'divider', accordion: false },
-    { path: 'expansion-panel', accordion: false },
-    { path: 'form-field', accordion: false },
-    { path: 'grid-list', accordion: false },
-    { path: 'icon', accordion: false },
-    { path: 'inputs', accordion: false },
-    { path: 'list', accordion: false },
-    { path: 'menu', accordion: false },
-    { path: 'paginator', accordion: false },
-    { path: 'progress-bar', accordion: false },
-    { path: 'radio', accordion: false },
-    { path: 'ripple', accordion: false },
-    { path: 'spinner', accordion: false },
-    { path: 'select', accordion: false },
-    { path: 'sidenav', accordion: false },
-    { path: 'slider', accordion: false },
-    { path: 'snackbar', accordion: false },
-    { path: 'sort-header', accordion: false },
-    { path: 'stepper', accordion: false },
-    { path: 'table', accordion: false },
-    { path: 'tabs', accordion: false },
-    { path: 'toggle', accordion: false },
-    { path: 'toolbar', accordion: false },
-    { path: 'tooltip', accordion: false },
-    { path: 'tree', accordion: false }
+    { title: 'autocomplete', path: 'autocomplete', link: 'autocomplete' },
+    { title: 'buttons', path: 'buttons', link: 'button' },
+    { title: 'badge', path: 'badge', link: 'badge' },
+    { title: 'bottom sheet', path: 'bottom-sheet', link: 'bottom-sheet' },
+    { title: 'button toggle', path: 'button-toggle', link: 'button-toggle' },
+    { title: 'card', path: 'card', link: 'card' },
+    { title: 'checkbox', path: 'checkbox', link: 'checkbox' },
+    { title: 'chips', path: 'chips', link: 'chips' },
+    { title: 'datepicker', path: 'datepicker', link: 'datepicker' },
+    { title: 'dialog', path: 'dialog', link: 'dialog' },
+    { title: 'divider', path: 'divider', link: 'divider' },
+    { title: 'expansion panel', path: 'expansion-panel', link: 'expansion' },
+    { title: 'form field', path: 'form-field', link: 'form-field' },
+    { title: 'grid list', path: 'grid-list', link: 'grid-list' },
+    { title: 'icon', path: 'icon', link: 'icon' },
+    { title: 'inputs', path: 'inputs', link: 'input' },
+    { title: 'list', path: 'list', link: 'list' },
+    { title: 'menu', path: 'menu', link: 'menu' },
+    { title: 'paginator', path: 'paginator', link: 'paginator' },
+    { title: 'progress bar', path: 'progress-bar', link: 'progress-bar' },
+    { title: 'spinner', path: 'spinner', link: 'progress-spinner' },
+    { title: 'radio', path: 'radio', link: 'radio' },
+    { title: 'ripple', path: 'ripple', link: 'ripple' },
+    { title: 'select', path: 'select', link: 'select' },
+    { title: 'sidenav', path: 'sidenav', link: 'sidenav' },
+    { title: 'toggle', path: 'toggle', link: 'slide-toggle' },
+    { title: 'slider', path: 'slider', link: 'slider' },
+    { title: 'snackbar', path: 'snackbar', link: 'snack-bar' },
+    { title: 'sort header', path: 'sort-header', link: 'sort' },
+    { title: 'stepper', path: 'stepper', link: 'stepper' },
+    { title: 'table', path: 'table', link: 'table' },
+    { title: 'tabs', path: 'tabs', link: 'tabs' },
+    { title: 'toolbar', path: 'toolbar', link: 'toolbar' },
+    { title: 'tooltip', path: 'tooltip', link: 'tooltip' },
+    { title: 'tree', path: 'tree', link: 'tree' }
   ];
+
+  ngOnInit() { this.activeMenu = window.location.pathname }
+
+  changeMenu(menu: string) {
+    this.activeMenu = menu;
+    console.log(this.activeMenu)
+  }
 }

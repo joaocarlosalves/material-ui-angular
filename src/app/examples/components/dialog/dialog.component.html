@@ -1,36 +1,32 @@
-<button mat-raised-button color="primary" (click)="openDialog()">Open dialog</button>
+<div class="page-container">
+  <h1>Dialog</h1>
 
-<br><br>
+  <div class="page-content">
+    <button mat-raised-button color="primary" (click)="openDialog()">Open dialog</button>
 
-<mat-divider></mat-divider>
+    <br><br>
+    <mat-divider></mat-divider>
+    <br>
 
-<br>
+    <ul>
+      <li>
+        <mat-form-field appearance="fill">
+          <mat-label>What's your name?</mat-label>
+          <input matInput [(ngModel)]="name">
+        </mat-form-field>
+      </li>
+      <li>
+        <button mat-raised-button color="primary" (click)="openDialog2()">Open dialog</button>
+      </li>
+      <li *ngIf="animal">
+        You chose: <i>{{animal}}</i>
+      </li>
+    </ul>
 
-<ul>
-  <li>
-    <mat-form-field appearance="fill">
-      <mat-label>What's your name?</mat-label>
-      <input matInput [(ngModel)]="name">
-    </mat-form-field>
-  </li>
-  <li>
-    <button mat-raised-button color="primary" (click)="openDialog2()">Open dialog</button>
-  </li>
-  <li *ngIf="animal">
-    You chose: <i>{{animal}}</i>
-  </li>
-</ul>
+    <br><br>
+    <mat-divider></mat-divider>
+    <br>
 
-<br><br>
-
-<mat-divider></mat-divider>
-
-<br>
-
-<button mat-raised-button color="primary" (click)="openDialog3()">Open dialog</button>
-
-<br><br>
-
-<mat-divider></mat-divider>
-
-<br>
+    <button mat-raised-button color="primary" (click)="openDialog3()">Open dialog</button>
+  </div>
+</div>

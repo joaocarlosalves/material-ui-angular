@@ -1,22 +1,7 @@
-<mat-form-field appearance="fill">
-  <mat-label>Message</mat-label>
-  <input matInput value="Disco party!" #message />
-</mat-form-field>
+<div class='home-list'>
+  <a *ngFor="let pg of pgs" [routerLink]="pg.path">
+    <img [src]="'https://material.angular.io/assets/screenshots/'+ pg.link +'.scene.png'" />
+    <h4>{{ pg.title }}</h4>
+  </a>
+</div>
 
-<mat-form-field appearance="fill">
-  <mat-label>Action</mat-label>
-  <input matInput value="Dance" #action />
-</mat-form-field>
-
-<button mat-stroked-button (click)="openSnackBar(message.value, action.value)">
-  Show snack-bar
-</button>
-<br /><br />
-
-<button
-  mat-raised-button
-  matTooltip="Info about the action"
-  aria-label="Button that displays a tooltip when focused or hovered over"
->
-  Action
-</button>

@@ -6,41 +6,24 @@
   font: inherit;
   -webkit-text-size-adjust: 100%;
 }
+:root {
+  --primary: #673ab7;
+  --secondary: #ffd740;
+  --gray-light: #cbcbcb;
+}
 ::-webkit-scrollbar {
   width: 18px;
   height: 18px;
 }
-::-webkit-scrollbar-thumb {
-  background: #673ab7;
-}
-::-webkit-scrollbar-track,
-::-webkit-scrollbar-corner {
-  background: #ffd740;
-}
-ul {
-  list-style: none;
-}
-html,
-body {
-  height: 100%;
-}
-html,
-body,
-p,
-header,
-section,
-article,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  width: 100%;
-}
-p {
-  margin-bottom: 15px;
-}
+::-webkit-scrollbar-thumb { background: var(--primary) }
+::-webkit-scrollbar-track, ::-webkit-scrollbar-corner { background: var(--secondary) }
+ul { list-style: none }
+html, body { height: 100% }
+html,body,p,
+header,section,
+article,h1,h2,h3,h4,h5,h6 { width: 100% }
+h1,h2,h3,h4,h5,h6 { font-weight: bold!important }
+p { margin-bottom: 15px }
 a {
   text-decoration: none;
   color: inherit;
@@ -59,9 +42,7 @@ body {
 main {
   display: flex;
   .main-content,
-  aside {
-    padding: 20px;
-  }
+  aside { padding: 20px }
   .main-content {
     margin-left: 250px;
     padding: 20px;
@@ -70,7 +51,7 @@ main {
     width: 250px;
     height: 100vh;
     position: fixed;
-    background-color: #ffd740;
+    background-color: var(--secondary);
 
     nav {
       width: 84%;
@@ -85,19 +66,31 @@ main {
       border-bottom: 1px solid transparent;
 
       a {
-        color: #673ab7;
+        text-decoration: none;
+        color: var(--primary);
         font-size: 18px;
         font-weight: 300;
         text-transform: capitalize;
         font-style: italic;
         transition: all .2s ease-in-out;
-        &:hover {
+        &:hover, &.active {
           text-indent: 5px;
-          border-bottom: 1px solid #673ab7;
-          padding-left: 3px
+          border-bottom: 1px solid var(--primary);
         }
+        &:visited { color: var(--primary) }
       }
     }
+  }
+}
+
+.page-container {
+  width: 100%;
+
+  h1 {
+    font-size: 22px;
+    margin-bottom: 45px;
+    color: var(--primary);
+    border-bottom: 1px solid var(--gray-light);
   }
 }
 

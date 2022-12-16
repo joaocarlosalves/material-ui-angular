@@ -1,5 +1,6 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -118,6 +119,7 @@ import { FormComponent } from '../form/form.component';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    RouterModule,
     DragDropModule,
     MatNativeDateModule,
     MatSnackBarModule,

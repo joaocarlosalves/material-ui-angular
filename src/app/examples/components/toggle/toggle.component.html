@@ -1,70 +1,78 @@
-<div>
-  <mat-slide-toggle>Slide me!</mat-slide-toggle>
-</div>
+<div class="page-container">
+  <h1>Toggle</h1>
+
+  <div class="page-content">
+    <div>
+      <mat-slide-toggle>Slide me!</mat-slide-toggle>
+    </div>
 
 
-<br />
-<mat-divider></mat-divider>
-<br />
-
-
-<div>
-  <span>Slider configuration</span>
-
-  <section class="example-section">
-    <label class="example-margin">Color:</label>
-    <mat-radio-group [(ngModel)]="color">
-      <mat-radio-button class="example-margin" value="primary">Primary</mat-radio-button>
-      <mat-radio-button class="example-margin" value="accent">Accent</mat-radio-button>
-      <mat-radio-button class="example-margin" value="warn">Warn</mat-radio-button>
-    </mat-radio-group>
-
-    <mat-checkbox class="example-margin" [(ngModel)]="checked">Checked</mat-checkbox>
-    <mat-checkbox class="example-margin" [(ngModel)]="disabled">Disabled</mat-checkbox>
-  </section>
-
-  <section class="example-section">
-    <mat-slide-toggle class="example-margin" [color]="color" [checked]="checked" [disabled]="disabled">
-      Slide me!
-    </mat-slide-toggle>
-  </section>
-</div>
-
-
-<br />
-<mat-divider></mat-divider>
-<br />
-
-
-<div>
-  <p>Slide Toggle using a simple NgModel.</p>
-  <mat-slide-toggle [(ngModel)]="isChecked">Slide Toggle Checked: {{ isChecked }}</mat-slide-toggle>
-  <br /><br /><br />
-
-  <p>Slide Toggle inside of a Template-driven form</p>
-  <form class="example-form" #form="ngForm" (ngSubmit)="alertFormValues(form.form)">
-    <mat-slide-toggle ngModel name="enableWifi">Enable Wifi</mat-slide-toggle>
-    <mat-slide-toggle ngModel name="acceptTerms" required>Accept Terms of Service</mat-slide-toggle>
     <br />
-    <button mat-raised-button color='primary' type="submit">Save Settings</button>
-  </form>
-</div>
-
-
-<br />
-<mat-divider></mat-divider>
-<br />
-
-
-<div style="margin-bottom: 50px">
-  <p>Slide Toggle inside of a Reactive form</p>
-
-  <form class="example-form" [formGroup]="formGroup" (ngSubmit)="alertFormValues(formGroup)" ngNativeValidate>
-    <mat-slide-toggle formControlName="enableWifi">Enable Wifi</mat-slide-toggle>
-    <mat-slide-toggle formControlName="acceptTerms">Accept Terms of Service</mat-slide-toggle>
-    <p>Form Group Status: {{ formGroup.status }}</p>
+    <mat-divider></mat-divider>
     <br />
-    <button mat-raised-button color='primary' type="submit">Save Settings</button>
-  </form>
+
+
+    <div>
+      <span>Slider configuration</span>
+
+      <section class="example-section">
+        <label class="example-margin">Color:</label>
+        <mat-radio-group [(ngModel)]="color">
+          <mat-radio-button class="example-margin" value="primary">Primary</mat-radio-button>
+          <mat-radio-button class="example-margin" value="accent">Accent</mat-radio-button>
+          <mat-radio-button class="example-margin" value="warn">Warn</mat-radio-button>
+        </mat-radio-group>
+
+        <mat-checkbox class="example-margin" [(ngModel)]="checked">Checked</mat-checkbox>
+        <mat-checkbox class="example-margin" [(ngModel)]="disabled">Disabled</mat-checkbox>
+      </section>
+
+      <section class="example-section">
+        <mat-slide-toggle class="example-margin" [color]="color" [checked]="checked" [disabled]="disabled">
+          Slide me!
+        </mat-slide-toggle>
+      </section>
+    </div>
+
+
+    <br />
+    <mat-divider></mat-divider>
+    <br />
+
+
+    <div>
+      <p>Slide Toggle using a simple NgModel.</p>
+      <mat-slide-toggle [(ngModel)]="isChecked">Slide Toggle Checked: {{ isChecked }}</mat-slide-toggle>
+      <br /><br /><br />
+
+      <p>Slide Toggle inside of a Template-driven form</p>
+      <form class="example-form" #form="ngForm" (ngSubmit)="alertFormValues(form.form)">
+        <mat-slide-toggle ngModel name="enableWifi">Enable Wifi</mat-slide-toggle>
+        <mat-slide-toggle ngModel name="acceptTerms" required>Accept Terms of Service</mat-slide-toggle>
+        <br />
+        <button mat-raised-button color='primary' type="submit">Save Settings</button>
+      </form>
+    </div>
+
+
+    <br />
+    <mat-divider></mat-divider>
+    <br />
+
+
+    <div style="margin-bottom: 50px">
+      <p>Slide Toggle inside of a Reactive form</p>
+
+      <form class="example-form" [formGroup]="formGroup" (ngSubmit)="alertFormValues(formGroup)" ngNativeValidate>
+        <mat-slide-toggle formControlName="enableWifi">Enable Wifi</mat-slide-toggle>
+        <mat-slide-toggle formControlName="acceptTerms">Accept Terms of Service</mat-slide-toggle>
+        <p>Form Group Status: {{ formGroup.status }}</p>
+        <br />
+        <button mat-raised-button color='primary' type="submit">Save Settings</button>
+      </form>
+    </div>
+  </div>
 </div>
+
+
 

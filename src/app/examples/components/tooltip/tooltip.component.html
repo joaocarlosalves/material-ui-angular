@@ -1,58 +1,66 @@
-<div>
-  <mat-form-field class="example-user-input" appearance="fill">
-    <mat-label>Tooltip message</mat-label>
-    <input matInput [formControl]="message">
-  </mat-form-field>
+<div class="page-container">
+  <h1>Tooltip</h1>
 
-  <button mat-raised-button color="primary" [matTooltip]="message.value || ''">Action
-  </button>
-</div>
+  <div class="page-content">
+    <div>
+      <mat-form-field class="example-user-input" appearance="fill">
+        <mat-label>Tooltip message</mat-label>
+        <input matInput [formControl]="message">
+      </mat-form-field>
 
-
-<br />
-<mat-divider></mat-divider>
-<br />
-
-
-<div>
-  <button mat-raised-button color="primary" matTooltip="Info about the action">Action</button>
-</div>
-
-<br />
-<mat-divider></mat-divider>
-<br />
+      <button mat-raised-button color="primary" [matTooltip]="message.value || ''">Action
+      </button>
+    </div>
 
 
-<div>
-  <mat-form-field class="example-user-input" appearance="fill">
-    <mat-label>Tooltip position</mat-label>
-    <mat-select [formControl]="position">
-      <mat-option *ngFor="let positionOption of positionOptions" [value]="positionOption">
-        {{positionOption}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-
-  <button mat-raised-button color="primary" matTooltip="Info about the action" [matTooltipPosition]="position.value!">Action</button>
-</div>
-
-<br />
-<mat-divider></mat-divider>
-<br />
+    <br />
+    <mat-divider></mat-divider>
+    <br />
 
 
-<div>
-  <mat-form-field appearance="fill">
-    <mat-label>Tooltip position</mat-label>
-    <mat-select [formControl]="position">
-      <mat-option *ngFor="let positionOption of positionOptions" [value]="positionOption">
-        {{positionOption}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+    <div>
+      <button mat-raised-button color="primary" matTooltip="Info about the action">Action</button>
+    </div>
 
-  <div class="example-container" cdkScrollable>
-    <button mat-raised-button color="primary" #tooltip="matTooltip" matTooltip="Info about the action"
-      [matTooltipPosition]="position.value!" matTooltipHideDelay="100000" class="example-button">Action</button>
+    <br />
+    <mat-divider></mat-divider>
+    <br />
+
+
+    <div>
+      <mat-form-field class="example-user-input" appearance="fill">
+        <mat-label>Tooltip position</mat-label>
+        <mat-select [formControl]="position">
+          <mat-option *ngFor="let positionOption of positionOptions" [value]="positionOption">
+            {{positionOption}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" matTooltip="Info about the action" [matTooltipPosition]="position.value!">Action</button>
+    </div>
+
+    <br />
+    <mat-divider></mat-divider>
+    <br />
+
+
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Tooltip position</mat-label>
+        <mat-select [formControl]="position">
+          <mat-option *ngFor="let positionOption of positionOptions" [value]="positionOption">
+            {{positionOption}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div class="example-container" cdkScrollable>
+        <button mat-raised-button color="primary" #tooltip="matTooltip" matTooltip="Info about the action"
+          [matTooltipPosition]="position.value!" matTooltipHideDelay="100000" class="example-button">Action</button>
+      </div>
+    </div>
   </div>
 </div>
+
+
