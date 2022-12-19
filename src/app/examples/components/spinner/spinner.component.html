@@ -3,58 +3,48 @@
 
   <div class="page-content">
     <div>
-      <h2 class="example-h2">Progress spinner configuration</h2>
+      <p><b>Progress spinner configuration</b></p>
 
       <section class="example-section">
-        <label class="example-margin">Color:</label>
+        <label class="example-margin"><b>Color:</b></label>
         <mat-radio-group [(ngModel)]="color">
-          <mat-radio-button class="example-margin" value="primary">
-            Primary
-          </mat-radio-button>
-          <mat-radio-button class="example-margin" value="accent">
-            Accent
-          </mat-radio-button>
-          <mat-radio-button class="example-margin" value="warn">
-            Warn
-          </mat-radio-button>
+          <mat-radio-button class="example-margin" value="primary">Primary</mat-radio-button>
+          <mat-radio-button class="example-margin" value="accent">Accent</mat-radio-button>
+          <mat-radio-button class="example-margin" value="warn">Warn</mat-radio-button>
         </mat-radio-group>
       </section>
 
-      <section class="example-section">
-        <label class="example-margin">Mode:</label>
+      <section class="example-section mb20px">
+        <label class="example-margin"><b>Mode:</b></label>
         <mat-radio-group [(ngModel)]="mode">
-          <mat-radio-button class="example-margin" value="determinate">
-            Determinate
-          </mat-radio-button>
-          <mat-radio-button class="example-margin" value="indeterminate">
-            Indeterminate
-          </mat-radio-button>
+          <mat-radio-button class="example-margin" value="determinate">Determinate</mat-radio-button>
+          <mat-radio-button class="example-margin" value="indeterminate">Indeterminate</mat-radio-button>
         </mat-radio-group>
       </section>
 
-      <section class="example-section" *ngIf="mode === 'determinate'">
-        <label class="example-margin">Progress:</label>
+      <mat-divider></mat-divider>
+
+      <section class="example-section mb20px mt20px" *ngIf="mode === 'determinate'">
+        <label class="example-margin"><b>Progress:</b></label>
         <mat-slider class="example-margin">
           <input type="range" [(ngModel)]="value" matSliderThumb />
         </mat-slider>
       </section>
 
-      <h2 class="example-h2">Result</h2>
+      <mat-divider></mat-divider>
 
-      <mat-progress-spinner
-        class="example-margin"
-        [color]="color"
-        [mode]="mode"
-        [value]="value"
-      >
-      </mat-progress-spinner>
+      <div class='mb20px mt20px'>
+        <p><b>Result</b></p>
+        <mat-progress-spinner class="example-margin" [color]="color" [mode]="mode" [value]="value">
+        </mat-progress-spinner>
+      </div>
     </div>
 
-    <br /><br />
     <mat-divider></mat-divider>
-    <br /><br />
 
-    <mat-spinner></mat-spinner>
+    <div class='mb20px mt20px'>
+      <mat-spinner></mat-spinner>
+    </div>
   </div>
 </div>
 

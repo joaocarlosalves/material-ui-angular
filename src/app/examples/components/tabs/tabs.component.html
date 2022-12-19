@@ -2,47 +2,42 @@
   <h1>Tabs</h1>
 
   <div class="page-content">
-    <div>
+    <!-- Tabs 1 -->
+    <div class='mb20px'>
       <ng-container *ngIf="(asyncTabs | async) === null">
         Loading tabs...
       </ng-container>
 
       <mat-tab-group>
         <mat-tab *ngFor="let tab of asyncTabs | async">
-          <ng-template mat-tab-label>{{tab.label}}</ng-template>
-          {{tab.content}}
+          <ng-template mat-tab-label>{{ tab.label }}</ng-template>
+          <p class='mt20px'>{{ tab.content }}</p>
         </mat-tab>
       </mat-tab-group>
     </div>
 
-
-    <br /><br />
     <mat-divider></mat-divider>
-    <br /><br />
 
-
-    <div>
+    <!-- Tabs 2 -->
+    <div class='mt20px mb20px'>
       <mat-tab-group>
-        <mat-tab label="First"> Content 1 </mat-tab>
-        <mat-tab label="Second"> Content 2 </mat-tab>
-        <mat-tab label="Third"> Content 3 </mat-tab>
+        <mat-tab label="First"><p class='mt20px'>Content 1</p></mat-tab>
+        <mat-tab label="Second"><p class='mt20px'>Content 2</p></mat-tab>
+        <mat-tab label="Third"><p class='mt20px'>Content 3</p></mat-tab>
       </mat-tab-group>
     </div>
 
-
-    <br /><br />
     <mat-divider></mat-divider>
-    <br /><br />
 
-
-    <div>
+    <!-- Tabs 3 -->
+    <div class='mt20px mb20px'>
       <mat-tab-group>
         <mat-tab>
           <ng-template mat-tab-label>
             <mat-icon class="example-tab-icon">thumb_up</mat-icon>
             First
           </ng-template>
-          Content 1
+          <p class='mt20px'>Content 1</p>
         </mat-tab>
 
         <mat-tab>
@@ -50,7 +45,7 @@
             <mat-icon class="example-tab-icon">thumb_up</mat-icon>
             Second
           </ng-template>
-          Content 2
+          <p class='mt20px'>Content 2</p>
         </mat-tab>
 
         <mat-tab>
@@ -59,18 +54,15 @@
             Third
           </ng-template>
 
-          Content 3
+          <p class='mt20px'>Content 3</p>
         </mat-tab>
       </mat-tab-group>
     </div>
 
-
-    <br /><br />
     <mat-divider></mat-divider>
-    <br /><br />
 
-
-    <div>
+    <!-- Tabs 4 -->
+    <div class='mt20px mb20px'>
       <mat-form-field appearance="fill">
         <mat-label>Selected tab index</mat-label>
         <input matInput type="number" [formControl]="selected">

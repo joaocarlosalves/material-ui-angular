@@ -2,7 +2,8 @@
   <h1>Table</h1>
 
   <div class="page-content">
-    <div>
+    <!-- Table 1 -->
+    <div class='mb20px'>
       <div class="demo-button-container">
         <button mat-raised-button color="primary" (click)="addData()" class="demo-button">Add data</button>
         <button mat-raised-button color="primary" [disabled]="dataSource.length < 4" (click)="removeData()" class="demo-button">
@@ -36,11 +37,10 @@
       </table>
     </div>
 
-    <br /><br />
     <mat-divider></mat-divider>
-    <br /><br />
 
-    <div>
+    <!-- Table 2 -->
+    <div class='mt20px mb20px'>
       <table mat-table [dataSource]="dataSource" class="demo-table">
         <ng-container matColumnDef="demo-position">
           <th mat-header-cell *matHeaderCellDef>No.</th>
@@ -67,11 +67,10 @@
       </table>
     </div>
 
-    <br /><br />
     <mat-divider></mat-divider>
-    <br /><br />
 
-    <div>
+    <!-- Table 3 -->
+    <div class='mt20px mb20px'>
       <button mat-raised-button color="primary" (click)="addColumn()">Add column</button>
       <button mat-raised-button color="primary" (click)="removeColumn()">Remove column</button>
       <button mat-raised-button color="primary" (click)="shuffle()">Shuffle</button>
@@ -87,11 +86,11 @@
       </table>
     </div>
 
-    <br /><br />
-    <mat-divider></mat-divider>
-    <br /><br />
 
-    <div>
+    <mat-divider></mat-divider>
+
+    <!-- Table 4 -->
+    <div class='mt20px mb20px'>
       <table mat-table [dataSource]="dataSource" multiTemplateDataRows>
         <ng-container [matColumnDef]="column" *ngFor="let column of columnsToDisplay">
           <th mat-header-cell *matHeaderCellDef>{{ column }}</th>
@@ -137,12 +136,10 @@
       </table>
     </div>
 
-
-    <br /><br />
     <mat-divider></mat-divider>
-    <br /><br />
 
-    <div>
+    <!-- Table 5 -->
+    <div class='mt20px mb20px'>
       <mat-form-field>
         <mat-label>Filter</mat-label>
         <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
@@ -179,13 +176,10 @@
 
     </div>
 
-
-    <br /><br />
     <mat-divider></mat-divider>
-    <br /><br />
 
-
-    <div>
+    <!-- Table 6 -->
+    <div class='mt20px mb20px'>
       <table mat-table [dataSource]="transactions">
         <ng-container matColumnDef="item">
           <th mat-header-cell *matHeaderCellDef> Item </th>
@@ -205,13 +199,10 @@
       </table>
     </div>
 
-
-    <br /><br />
     <mat-divider></mat-divider>
-    <br /><br />
 
-
-    <div>
+    <!-- Table 7 -->
+    <div class='mt20px mb20px'>
       <mat-form-field>
         <mat-label>Filter</mat-label>
         <input matInput (keyup)="applyFilter2($event)" placeholder="Ex. Mia" #input>
@@ -251,13 +242,10 @@
       </div>
     </div>
 
-
-    <br /><br />
     <mat-divider></mat-divider>
-    <br /><br />
 
-
-    <div style="margin-bottom: 50px">
+    <!-- Table 8 -->
+    <div class='mt20px mb20px'>
       <table mat-table [dataSource]="dataSource" class="demo-table">
         <ng-container matColumnDef="position">
           <th mat-header-cell *matHeaderCellDef>No.</th>
@@ -281,39 +269,34 @@
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr
-            mat-row
-            (click)="clickedRows.add(row)"
+            mat-row (click)="clickedRows.add(row)"
             [class.demo-row-is-clicked]="clickedRows.has(row)"
-            *matRowDef="let row; columns: displayedColumns;"
-        ></tr>
+            *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
 
-      <div>
-        <h3>
-          Click Log
-        </h3>
+      <div class='mt20px mb20px'>
+        <div>
+          <p><b>Click Log</b></p>
+        </div>
+
+        <div *ngIf="!clickedRows.size">
+          Clicked rows will be logged here
+        </div>
+
+        <ul>
+          <li *ngFor="let clickedRow of clickedRows">
+            Clicked on {{clickedRow.name}}
+          </li>
+        </ul>
       </div>
-
-      <div *ngIf="!clickedRows.size">
-        Clicked rows will be logged here
-      </div>
-
-      <ul>
-        <li *ngFor="let clickedRow of clickedRows">
-          Clicked on {{clickedRow.name}}
-        </li>
-      </ul>
-
     </div>
 
-
-    <br /><br />
     <mat-divider></mat-divider>
-    <br /><br />
+    <br>
 
-
-    <div>
-      <table mat-table [dataSource]="dataSource6" class="mat-elevation-z8">
+    <!-- Table 9 -->
+    <div class='mt20px mb20px'>
+      <table mat-table [dataSource]="dataSource6" class="mt20px mat-elevation-z8">
         <ng-container matColumnDef="select">
           <th mat-header-cell *matHeaderCellDef>
             <mat-checkbox (change)="$event ? toggleAllRows() : null"

@@ -2,7 +2,8 @@
   <h1>Stepper</h1>
 
   <div class="page-content">
-    <div>
+    <!-- Stepper 1 -->
+    <div class='mb20px'>
       <button mat-raised-button color='primary' (click)="isEditable = !isEditable">
         {{!isEditable ? 'Enable edit mode' : 'Disable edit mode'}}
       </button>
@@ -43,16 +44,12 @@
           </div>
         </mat-step>
       </mat-stepper>
-
     </div>
 
-
-    <br /><br />
     <mat-divider></mat-divider>
-    <br /><br />
 
-
-    <div>
+    <!-- Stepper 2 -->
+    <div class='mt20px mb20px'>
       <mat-stepper #stepper>
         <mat-step [stepControl]="firstFormGroup" errorMessage="Name is required.">
           <form [formGroup]="firstFormGroup">
@@ -93,13 +90,10 @@
       </mat-stepper>
     </div>
 
-
-    <br /><br />
     <mat-divider></mat-divider>
-    <br /><br />
 
-
-    <div style="margin-bottom: 50px">
+    <!-- Stepper 3 -->
+    <div class='mt20px mb20px'>
       <mat-stepper orientation="vertical">
         <mat-step>
           <ng-template matStepLabel>Step 1</ng-template>

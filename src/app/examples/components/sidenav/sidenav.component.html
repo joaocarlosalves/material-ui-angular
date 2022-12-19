@@ -2,7 +2,8 @@
   <h1>Sidenav</h1>
 
   <div class="page-content">
-    <div>
+    <!-- Sidenav 1 -->
+    <div class='mt20px mb20px'>
       <mat-drawer-container class="example-container" autosize>
         <mat-drawer #drawer class="example-sidenav" mode="side">
           <p>Auto-resizing sidenav</p>
@@ -21,13 +22,10 @@
       </mat-drawer-container>
     </div>
 
-
-    <br />
     <mat-divider></mat-divider>
-    <br />
 
-
-    <div>
+    <!-- Sidenav 2 -->
+    <div class='mt20px mb20px'>
       <mat-drawer-container class="example-container2" [hasBackdrop]="hasBackdrop.value">
         <mat-drawer #drawer2 [mode]="mode.value">I'm a drawer</mat-drawer>
         <mat-drawer-content>
@@ -52,13 +50,10 @@
       </mat-drawer-container>
     </div>
 
-
-    <br />
     <mat-divider></mat-divider>
-    <br />
 
-
-    <div>
+    <!-- Sidenav 3 -->
+    <div class='mt20px'>
       <mat-drawer-container class="example-container">
         <mat-drawer mode="side" opened>Drawer content</mat-drawer>
         <mat-drawer-content>Main content</mat-drawer-content>

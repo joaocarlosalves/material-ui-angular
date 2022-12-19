@@ -2,37 +2,31 @@
   <h1>Slider</h1>
 
   <div class="page-content">
-    <div>
+    <!-- Slider 1 -->
+    <div class='mb20px'>
       <mat-slider><input matSliderThumb /></mat-slider>
     </div>
 
-
-    <br />
     <mat-divider></mat-divider>
-    <br />
 
-
-    <div>
+    <!-- Slider 2 -->
+    <div class='mt20px mb20px'>
       <mat-slider
         min="0"
         max="100000"
         step="1000"
         showTickMarks
         discrete
-        [displayWith]="formatLabel"
-      >
+        [displayWith]="formatLabel">
         <input matSliderThumb />
       </mat-slider>
     </div>
 
-
-    <br />
     <mat-divider></mat-divider>
-    <br />
 
-
-    <div>
-      <h2 class="example-h2">Slider configuration</h2>
+    <!-- Slider 3 -->
+    <div class='mt20px mb20px'>
+      <p><b>Slider configuration</b></p>
 
       <section class="example-section">
         <mat-form-field class="example-margin example-width" appearance="fill">
@@ -53,32 +47,24 @@
         </mat-form-field>
       </section>
 
-      <section class="example-section">
+      <section class="example-section flex gap-10">
         <mat-checkbox [(ngModel)]="showTicks">Show ticks</mat-checkbox>
-      </section>
-
-      <section class="example-section">
         <mat-checkbox [(ngModel)]="thumbLabel">Show thumb label</mat-checkbox>
-      </section>
-
-      <section class="example-section">
         <mat-checkbox [(ngModel)]="disabled">Disabled</mat-checkbox>
       </section>
     </div>
 
-
-    <br />
     <mat-divider></mat-divider>
-    <br />
 
-
-    <div>
-      <h2>Result</h2>
+    <!-- Slider 4 -->
+    <div class='mt20px mb20px'>
+      <p><b>Result</b></p>
 
       <div class="example-label-container">
         <label id="example-name-label" class="example-name-label">Value</label>
         <label class="example-value-label">{{ value }}</label>
       </div>
+
       <mat-slider
         class="example-margin"
         [disabled]="disabled"
@@ -86,8 +72,7 @@
         [min]="min"
         [step]="step"
         [discrete]="thumbLabel"
-        [showTickMarks]="showTicks"
-      >
+        [showTickMarks]="showTicks">
         <input matSliderThumb [(ngModel)]="value" />
       </mat-slider>
     </div>

@@ -2,7 +2,8 @@
   <h1>Select</h1>
 
   <div class="page-content">
-    <div>
+    <!-- Select 1 -->
+    <div class='mb20px'>
       <mat-form-field appearance="fill">
         <mat-label>Select an option</mat-label>
         <mat-select [(value)]="selected">
@@ -16,12 +17,10 @@
       <p>You selected: {{ selected }}</p>
     </div>
 
-    <br />
     <mat-divider></mat-divider>
-    <br />
 
-    <div>
-      <h4>mat-select</h4>
+    <!-- Select 2 -->
+    <div class='mt20px mb20px'>
       <mat-form-field appearance="fill">
         <mat-label>State</mat-label>
         <mat-select>
@@ -33,13 +32,11 @@
       </mat-form-field>
     </div>
 
-    <br />
     <mat-divider></mat-divider>
-    <br />
 
-    <div>
+    <!-- Select 3 -->
+    <div class='mt20px mb20px'>
       <form [formGroup]="form">
-        <h4>mat-select</h4>
         <mat-form-field appearance="fill">
           <mat-label>Favorite Food</mat-label>
           <mat-select [formControl]="foodControl" name="food">
@@ -53,17 +50,14 @@
       </form>
     </div>
 
-    <br />
     <mat-divider></mat-divider>
-    <br />
 
-    <div>
+    <!-- Select 4 -->
+    <div class='mt20px mb20px'>
       <mat-form-field appearance="fill">
         <mat-label>Panel color</mat-label>
-        <mat-select
-          [formControl]="panelColor"
-          panelClass="example-panel-{{ panelColor.value }}"
-        >
+        <mat-select [formControl]="panelColor"
+          panelClass="example-panel-{{ panelColor.value }}">
           <mat-option value="red">Red</mat-option>
           <mat-option value="green">Green</mat-option>
           <mat-option value="blue">Blue</mat-option>
@@ -71,11 +65,10 @@
       </mat-form-field>
     </div>
 
-    <br />
     <mat-divider></mat-divider>
-    <br />
 
-    <div>
+    <!-- Select 5 -->
+    <div class='mt20px mb20px'>
       <mat-form-field appearance="fill">
         <mat-label>Select an option</mat-label>
         <mat-select disableRipple>
@@ -86,12 +79,10 @@
       </mat-form-field>
     </div>
 
-    <br />
     <mat-divider></mat-divider>
-    <br />
 
-    <div style="margin-bottom: 40px">
-      <h4>mat select</h4>
+    <!-- Select 6 -->
+    <div class='mt20px mb20px'>
       <mat-form-field appearance="fill">
         <mat-label>Favorite animal</mat-label>
         <mat-select [formControl]="animalControl" required>

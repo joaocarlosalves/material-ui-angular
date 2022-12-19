@@ -2,7 +2,8 @@
   <h1>Snackbar</h1>
 
   <div class="page-content">
-    <div class='flex justify-content-start align-items-center' style="gap: 10px">
+    <!-- Snackbar 1 -->
+    <div class='flex justify-content-start align-items-center gap-10 mb20px'>
       <mat-form-field appearance="fill">
         <mat-label>Horizontal position</mat-label>
         <mat-select [(value)]="horizontalPosition">
@@ -27,13 +28,10 @@
       </button>
     </div>
 
-
-    <br />
     <mat-divider></mat-divider>
-    <br />
 
-
-    <div class='flex justify-content-start align-items-center' style="gap: 10px">
+    <!-- Snackbar 2 -->
+    <div class='flex justify-content-start align-items-center gap-10 mt20px mb20px'>
       <mat-form-field appearance="fill">
         <mat-label>Message</mat-label>
         <input matInput value="Disco party!" #message>
@@ -48,5 +46,3 @@
     </div>
   </div>
 </div>
-
-

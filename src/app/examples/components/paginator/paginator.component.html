@@ -40,16 +40,10 @@
           />
         </mat-form-field>
 
-        <div class="demo-toggles">
-          <mat-slide-toggle [(ngModel)]="hidePageSize"
-            >Hide page size</mat-slide-toggle
-          >
-          <mat-slide-toggle [(ngModel)]="showPageSizeOptions"
-            >Show multiple page size options</mat-slide-toggle
-          >
-          <mat-slide-toggle [(ngModel)]="showFirstLastButtons"
-            >Show first/last buttons</mat-slide-toggle
-          >
+        <div class="demo-toggles mt20px">
+          <mat-slide-toggle [(ngModel)]="hidePageSize">Hide page size</mat-slide-toggle>
+          <mat-slide-toggle [(ngModel)]="showPageSizeOptions">Show multiple page size options</mat-slide-toggle>
+          <mat-slide-toggle [(ngModel)]="showFirstLastButtons">Show first/last buttons</mat-slide-toggle>
           <mat-slide-toggle [(ngModel)]="disabled">Disabled</mat-slide-toggle>
         </div>
       </div>
@@ -65,11 +59,10 @@
         [pageSizeOptions]="showPageSizeOptions ? pageSizeOptions : []"
         [hidePageSize]="hidePageSize"
         [pageIndex]="pageIndex"
-        aria-label="Select page"
-      >
+        aria-label="Select page">
       </mat-paginator>
 
-      <div class="demo-data">
+      <div class="demo-data mt20px">
         <div>
           Output event: {{ (pageEvent | json) || "No events dispatched yet" }}
         </div>
@@ -77,13 +70,9 @@
       </div>
     </div>
 
-
-    <br />
     <mat-divider></mat-divider>
-    <br />
 
-
-    <div>
+    <div class='mb20px mt20px'>
       <mat-paginator [length]="200" [pageSizeOptions]="[10, 50, 100]" aria-label="Select page"></mat-paginator>
     </div>
   </div>
